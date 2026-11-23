@@ -1,0 +1,128 @@
+CEREBELLUM DESIGNER 0.0.1 — INSTALLAZIONE SU UBUNTU 24.04 LTS
+Preparato per Alberto Arturo Vergani, 23 novembre 2026.
+
+Questo kit installa BSB 8.0.2 con MPI, cerebellar-models 0.13.0 e Cerebellum
+Designer 0.0.1. Le versioni sono quelle verificate per il pacchetto esportato;
+non sono un aggiornamento automatico alle ultime release disponibili.
+Il modello incluso e' il checkout ufficiale al commit
+ e77be2d0e9ea907a7672c7ab10a9279050fcd024.
+
+1. MACCHINA VIRTUALE
+Usa Ubuntu 24.04 LTS (Python 3.12). Per ricostruire con mpirun -n 8 occorrono
+8 CPU/slot MPI visibili nella VM. La sola dashboard puo' aprirsi anche con meno
+CPU. La RAM richiesta dalle ricostruzioni dipende dalla dimensione della rete:
+non assegnare tutta la RAM del computer alla VM e non confondere i requisiti
+minimi di Ubuntu con quelli di una rete completa. Prima di run grandi controlla:
+  nproc
+  free -h
+  df -h .
+
+2. TRASFERIMENTO
+Apri questa email nel browser DENTRO Ubuntu, scarica il file
+CerebellumDesigner_Ubuntu_20261123.tar.gz e aprilo con Gestore archivi.
+Estrai la cartella CerebellumDesigner_Ubuntu direttamente nella tua Home.
+Il percorso finale deve essere ~/CerebellumDesigner_Ubuntu.
+Usa il filesystem Linux della VM per ambiente e HDF5; conserva spazio anche
+sul disco Windows che contiene il disco virtuale. Non estrarre dentro una
+vecchia installazione e non rinominare/spostare la cartella dopo aver creato
+il venv: per trasferirla di nuovo, riparti dall'archivio originale.
+
+3. INSTALLAZIONE (UNA VOLTA)
+Apri il terminale DI UBUNTU, non PowerShell, e incolla:
+
+  cd ~/CerebellumDesigner_Ubuntu
+  bash setup_ubuntu.sh
+
+Lo script chiede la password Ubuntu per apt, installa gli strumenti di sistema
+(MPI, compilatore, Python/venv, font), crea il venv locale szpaper2 e installa
+BSB, il checkout cerebellar-models e il Designer in modalita' editable.
+Servono internet per apt/pip e il normale utente Ubuntu, non root.
+Lo script controlla versioni, dipendenze, catalogo/morfologie e MPI x8;
+non costruisce una rete completa e non avvia simulazioni.
+Il file installed-versions.txt registra le versioni effettivamente risolte.
+Non copiare il vecchio venv dell'HD: il nuovo ambiente viene creato qui.
+
+4. APRIRE IL DESIGNER
+Ogni volta che vuoi usarlo:
+
+  cd ~/CerebellumDesigner_Ubuntu
+  bash start_designer.sh
+
+Lascia aperto quel terminale. Nel browser DENTRO Ubuntu apri:
+  http://127.0.0.1:8891/
+
+Il localhost di Windows indica Windows, non automaticamente la VM.
+Il server resta limitato alla VM (127.0.0.1); non serve aprire porte pubbliche.
+Ctrl+C nel terminale arresta il Designer. Se 8891 e' occupata:
+  bash start_designer.sh 8893
+poi apri http://127.0.0.1:8893/ dentro Ubuntu.
+
+5. USO ED ESPORTAZIONE
+Cells: morfologie, dimensioni, rotazioni/tilt e parametri intrinseci.
+Network: spessori/densita' e parametri delle connessioni TM/statiche.
+Review & save: YAML, SWC gia' trasformate, report HTML/PDF e reconstruct.sh.
+Save YAML & package salva e prepara il comando, ma non avvia la ricostruzione.
+Le esportazioni sono in:
+  ~/CerebellumDesigner_Ubuntu/DeformationAlgorithm/exports/
+I profili salvati sono in DeformationAlgorithm/presets/.
+
+Al primo utilizzo non e' incluso un HDF5 di riferimento. Per il preview dei
+somi lascia Healthy e usa Verify BSB placement: esegue solo il placement con
+8 processi, non connessioni o simulazioni. Poi gli slider usano la stima live.
+
+6. RICOSTRUIRE CON 8 PROCESSI MPI
+Dopo l'esportazione, copia nel terminale il comando finale mostrato dalla GUI.
+Oppure apri un secondo terminale Ubuntu, attiva l'ambiente:
+
+  cd ~/CerebellumDesigner_Ubuntu
+  source activate.sh
+
+Entra nella specifica cartella esportata (il nome data_codice lo mostra la GUI)
+e lancia:
+
+  bash reconstruct.sh --check
+  bash reconstruct.sh
+
+Lo script esegue da solo mpirun -n 8 per placement e connessioni: NON anteporre
+un altro mpirun. Produce reconstruction/network.hdf5, log e success.json.
+Rifiuta di sovrascrivere una cartella di output esistente. Per un nuovo output:
+  bash reconstruct.sh --output /percorso/di/una/nuova_cartella
+La cartella padre deve gia' esistere.
+L'export portabile supporta i parametri uniformi della GUI (sigma zero).
+Non editare i file esportati a mano: cambierebbero gli hash. Modifica nel
+Designer e riesporta. Gli SWC sono gia' trasformati una volta.
+
+7. COSA NON INSTALLA QUESTO KIT
+NEST e NEURON non servono per Designer/ricostruzione e non sono installati.
+I file elettrici esportati sono parametri, non uno stimolo o una simulazione.
+Per simulazioni EGLIF servira' aggiungere NEST compatibile con MPI e compilare
+cerebmodule da NESTML. Non basta installare il wheel pip di nest-simulator per
+compilare l'estensione del modello. Questa e' una fase separata, da verificare
+prima di trasferire protocolli e lanciare run scientifici.
+
+8. RISOLUZIONE PROBLEMI
+- Se setup si ferma, non ignorare il messaggio e non avviare la ricostruzione.
+- Se segnala pochi slot MPI, spegni correttamente Ubuntu e assegna 8 vCPU nelle
+  impostazioni della VM, se l'hardware lo permette. Poi ricontrolla:
+    cd ~/CerebellumDesigner_Ubuntu
+    source activate.sh
+    mpirun -n 8 python mpi_smoke.py
+- Per salvare il log dell'installazione, da Bash:
+    set -o pipefail
+    bash setup_ubuntu.sh 2>&1 | tee installation.log
+- Per verificare file e dipendenze:
+    python3 verify_kit.py
+    source activate.sh
+    python -m pip check
+    python check_install.py
+
+FONTI UFFICIALI
+BSB: https://bsb.readthedocs.io/en/latest/getting-started/installation.html
+Modello: https://github.com/dbbs-lab/cerebellar-models
+Installazione del modello (revisionata rispetto al commit del kit):
+https://github.com/dbbs-lab/cerebellar-models/blob/e77be2d0e9ea907a7672c7ab10a9279050fcd024/docs/getting-started/installation.rst
+Ubuntu/VirtualBox:
+https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox
+
+Il kit contiene codice e configurazioni, non le simulazioni, i loro risultati,
+credenziali, cache o ambienti Python del computer di origine.

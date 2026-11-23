@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+.venv/
+szpaper2/
+*.hdf5
+*.h5
