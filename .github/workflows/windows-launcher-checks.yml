@@ -1,0 +1,19 @@
+name: Windows launcher checks
+on:
+  push:
+    paths: ['windows/**', '.github/workflows/windows-launcher-checks.yml']
+  pull_request:
+    paths: ['windows/**', '.github/workflows/windows-launcher-checks.yml']
+permissions:
+  contents: read
+jobs:
+  windows-powershell:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Windows PowerShell 5.1 syntax and launcher contracts
+        shell: powershell
+        run: .\windows\tests\test_launcher.ps1
+      - name: PowerShell 7 launcher contracts
+        shell: pwsh
+        run: .\windows\tests\test_launcher.ps1

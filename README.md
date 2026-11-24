@@ -4,9 +4,24 @@
 
 CD transforms morphological, network and electrical features of the cerebellar network relative to the canonical model.
 
-This repository distributes the verified **Ubuntu 24.04 LTS installation kit** for Cerebellum Designer, BSB 8.0.2 and cerebellar-models 0.13.0. The kit includes readable application source code, model source, configuration files and installation scripts. It does not contain Python environments or simulation results.
+This repository distributes the verified **Ubuntu 24.04 LTS installation kit** and a **Windows launcher using WSL2** for Cerebellum Designer, BSB 8.0.2 and cerebellar-models 0.13.0. The kit includes readable application source code, model source, configuration files and installation scripts. It does not contain Python environments or simulation results.
 
 ## Download and install
+
+### Windows (WSL2)
+
+1. [Download the Windows package](downloads/CerebellumDesigner_Windows_WSL2_20261124.zip?raw=true) and extract the entire ZIP into a local Windows folder.
+2. If needed, install WSL2 and Ubuntu 24.04 from an Administrator PowerShell: `wsl --install -d Ubuntu-24.04`. Restart if requested, then open Ubuntu once to create your Linux username/password.
+3. Double-click **`1_Install_Designer.cmd`** as a normal Windows user. Wait for installation to finish.
+4. Double-click **`2_Start_Designer.cmd`**. The dashboard opens in your **Windows browser**.
+
+**`3_Open_Exports.cmd`** opens your generated files in Explorer. **`4_Reconstruction_Terminal.cmd`** opens a Linux terminal with the BSB environment activated; reconstruction remains an explicit action with `bash reconstruct.sh` and **MPI-8**.
+
+The Windows package runs the same pinned Ubuntu backend through WSL2; it is **not a native standalone Windows executable**. It targets x64 and does not alter an existing VirtualBox/VMware Ubuntu VM. The scientific source and presets are unchanged. Files live under `~/CerebellumDesigner_WSL` in the selected WSL distribution. Keep that folder and your WSL distribution to retain saved work. The launchers do not change global PowerShell policy or open firewall ports. Windows ARM and full end-to-end installation on a physical Windows/WSL2 machine have not been validated.
+
+[Windows instructions in Italian](windows/README_IT.txt) · [Launcher source](windows/) · [Checksums](downloads/SHA256SUMS)
+
+### Ubuntu / Ubuntu VM
 
 1. Open this page in the browser **inside your Ubuntu VM**.
 2. [Download the Ubuntu installation kit](downloads/CerebellumDesigner_Ubuntu_20261123.tar.gz?raw=true).
@@ -60,6 +75,8 @@ The current Designer supports the mouse cortical model and uniform population ef
 ## Verification
 
 The installation was exercised in a new Python 3.12 environment on Ubuntu 24.04. Checks covered dependencies, eight MPI processes, server startup, model and morphology catalogs, YAML/SWC/PDF export and the exported launcher's environment check. The export implementation was also verified with two small complete MPI-8 reconstruction fixtures. These checks are software validation, not biological validation or a benchmark for every Windows host/VM configuration.
+
+The Windows wrapper adds PowerShell syntax/argument/integrity checks, extraction tests with spaces and apostrophes, and safeguards against overwriting unrelated folders, changed source or results. GitHub Actions runs the launcher contracts under Windows PowerShell 5.1 and PowerShell 7. Those checks do not provision WSL or replace a complete Windows installation test.
 
 ## Sources and notices
 
