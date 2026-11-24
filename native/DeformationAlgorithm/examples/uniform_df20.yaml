@@ -1,0 +1,8 @@
+schema: cereb-df/v1
+name: Uniform DF 20 percent
+seed: 1234
+defaults:
+  df_percent: {mean: 20, sigma: 0}
+layers: {}
+populations: {}
+individuals: []

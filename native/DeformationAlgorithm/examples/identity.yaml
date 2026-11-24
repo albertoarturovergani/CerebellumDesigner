@@ -1,0 +1,8 @@
+schema: cereb-df/v1
+name: Identity control
+seed: 1234
+defaults:
+  df_percent: {mean: 0, sigma: 0, bounds: [0, 100]}
+layers: {}
+populations: {}
+individuals: []

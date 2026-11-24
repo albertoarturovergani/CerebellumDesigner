@@ -4,11 +4,27 @@
 
 CD transforms morphological, network and electrical features of the cerebellar network relative to the canonical model.
 
-This repository distributes the verified **Ubuntu 24.04 LTS installation kit** and a **Windows launcher using WSL2** for Cerebellum Designer, BSB 8.0.2 and cerebellar-models 0.13.0. The kit includes readable application source code, model source, configuration files and installation scripts. It does not contain Python environments or simulation results.
+This repository distributes a **native Windows x64 editor** and the existing Ubuntu / WSL2 reconstruction kits. The Windows editor runs without Ubuntu, WSL, a VM, an installed Python, BSB or MPI. It includes the model assets and the **SZ – structure + NMDA** preset with parameter-level references.
 
 ## Download and install
 
-### Windows (WSL2)
+### Windows native — no Ubuntu
+
+1. [Download CerebellumDesigner_Windows_x64.zip](https://github.com/albertoarturovergani/CerebellumDesigner/releases/download/native-v0.0.1-20261124/CerebellumDesigner_Windows_x64.zip).
+2. Extract the **entire ZIP** into a local Windows folder.
+3. Double-click **CerebellumDesigner.exe**. Keep the `_internal` folder beside it.
+
+The dashboard opens in your Windows browser. Use **Preload a profile → SZ - structure + NMDA → Load profile** to inspect the included SZ modifications. Use **Close app** to stop the local editor.
+
+Profiles and exports are saved under `%LOCALAPPDATA%\CerebellumDesigner`. Morphology previews, sliders, dendrogram/DCI, rotations, tilt, electrical parameters, references and YAML/SWC/HTML/PDF export run locally. The network preview estimates changes by linear proportions from bundled canonical BSB soma coordinates.
+
+**The native editor prepares reconstruction packages; it does not execute BSB/MPI or simulations on Windows.** Transfer its export to your existing BSB workstation or HPC and run `bash reconstruct.sh` there. No Ubuntu installation is required on the Windows editing PC.
+
+[Italian native-Windows instructions](native/README_IT.txt) · [Native source](native/) · [Release and checksums](https://github.com/albertoarturovergani/CerebellumDesigner/releases/tag/native-v0.0.1-20261124)
+
+The executable is unsigned. Windows x64 is the build target; ARM and every personal GPU/security configuration are not validated.
+
+### Optional legacy Windows launcher (requires WSL2)
 
 1. [Download the Windows package](downloads/CerebellumDesigner_Windows_WSL2_20261124.zip?raw=true) and extract the entire ZIP into a local Windows folder.
 2. If needed, install WSL2 and Ubuntu 24.04 from an Administrator PowerShell: `wsl --install -d Ubuntu-24.04`. Restart if requested, then open Ubuntu once to create your Linux username/password.
@@ -74,6 +90,9 @@ The current Designer supports the mouse cortical model and uniform population ef
 
 ## Verification
 
+The native Windows workflow tests the source editor and the **actual frozen EXE** on a Windows runner. Checks cover the SZ preset, all five morphologies, numerical parity with the original Ubuntu engine, export hashes, native population names and connection rules, HTML/PDF/ZIP output, Unicode paths, profile persistence, loopback-origin restrictions and graceful shutdown. The generated native-editor package also passed `reconstruct.sh --check` in the matching Linux BSB environment. These are software checks, not physiological validation.
+
+
 The installation was exercised in a new Python 3.12 environment on Ubuntu 24.04. Checks covered dependencies, eight MPI processes, server startup, model and morphology catalogs, YAML/SWC/PDF export and the exported launcher's environment check. The export implementation was also verified with two small complete MPI-8 reconstruction fixtures. These checks are software validation, not biological validation or a benchmark for every Windows host/VM configuration.
 
 The Windows wrapper adds PowerShell syntax/argument/integrity checks, extraction tests with spaces and apostrophes, and safeguards against overwriting unrelated folders, changed source or results. GitHub Actions runs the launcher contracts under Windows PowerShell 5.1 and PowerShell 7. Those checks do not provision WSL or replace a complete Windows installation test.
@@ -84,4 +103,4 @@ The Windows wrapper adds PowerShell syntax/argument/integrity checks, extraction
 - [Official cerebellar-models repository](https://github.com/dbbs-lab/cerebellar-models)
 - The original model license and attribution are retained inside the kit under `src/cerebellar-models/`. The third-party JavaScript library retains its license header. Third-party components retain their own license terms.
 
-The archive is a source-code installation kit, not a prebuilt virtual machine. Future packaged updates should be extracted into a new directory; do not overwrite an existing environment or scientific output.
+The Ubuntu archive is a source-code installation kit; the native Windows release contains its own executable and runtime. Future packaged updates should be extracted into a new directory; do not overwrite an existing environment or scientific output.

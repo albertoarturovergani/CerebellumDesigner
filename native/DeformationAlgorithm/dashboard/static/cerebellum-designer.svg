@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 196 140" fill="none" style="color:#b34b0c">
+ <title>Cerebellum Designer — C/D cerebellar hemispheres, pencil completing the vermis</title>
+ <g stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+  <!-- Broad, lobulated hemispheres. The medial opening suggests C, the right outline D. -->
+  <path d="M89 53C80 42 65 38 51 43C36 41 23 51 21 61C11 67 9 79 14 88C10 99 20 110 31 113C41 126 59 129 72 123Q83 125 91 117" stroke-width="2.6"/>
+  <path d="M111 46C124 40 138 41 148 47C161 46 174 56 175 67C185 75 185 89 178 97C178 109 166 117 155 118C143 129 125 127 111 119C115 109 111 99 113 89C110 78 114 70 112 61Q113 53 111 46Z" stroke-width="2.6" fill="currentColor" fill-opacity=".045"/>
+  <!-- Folia follow transverse curved sheets, not radial rings. -->
+  <g stroke-width="1.4">
+   <path d="M31 59C43 49 62 47 78 55M24 67C40 57 58 55 77 62M20 75C37 65 55 64 74 69M18 84C36 74 55 72 72 77M19 93C36 83 54 82 71 85M23 102C38 91 54 90 72 93M31 110C43 101 57 98 75 102M44 118Q60 108 80 111"/>
+   <path d="M119 53C135 48 150 55 161 63M119 61C138 56 155 64 168 72M119 69C138 64 157 72 173 81M119 77C139 72 157 81 174 90M119 85C138 81 155 90 170 98M119 93C138 89 153 99 163 106M119 101C135 97 149 108 153 114M118 110Q134 107 143 119"/>
+  </g>
+  <!-- Small secondary folds remain local and asymmetric. -->
+  <path d="M40 61Q51 55 61 59M31 81Q43 75 53 78M42 105Q52 100 63 102M134 62Q145 63 151 68M137 87Q149 88 157 96M131 108L139 112" stroke-width=".85" opacity=".65"/>
+  <!-- The pencil is completing the central vermis; unfinished contour above its tip. -->
+  <path d="M98 52Q94 57 97 63" stroke-width="1.35" stroke-dasharray="1.5 3" opacity=".45"/>
+  <path d="M98 66C92 75 97 82 94 89C97 99 94 106 100 115M104 56C108 67 104 75 108 83C104 92 108 104 100 115" stroke-width="1.65"/>
+  <path d="M97 72Q101 74 106 71M95 79Q101 81 107 78M95 86Q101 89 106 85M96 94Q101 96 106 92M96 101Q101 103 105 99M98 108L103 106" stroke-width="1.25"/>
+  <!-- Single graphite pencil, no hand. Tip touches the vermis contour at (98,66). -->
+  <path d="M98 66L102 51L130 8Q132 5 135 7L139 10L110 56Z" stroke-width="1.8" fill="currentColor" fill-opacity=".10"/>
+  <path d="M102 51L110 56M106 51L134 9M129 11L136 15M98 66L101 60" stroke-width="1.15"/>
+  <path d="M98 66L100 60L102 62Z" fill="currentColor" stroke-width=".6"/>
+ </g>
+</svg>

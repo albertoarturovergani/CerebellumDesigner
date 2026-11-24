@@ -1,0 +1,45 @@
+schema: cereb-df/v1
+name: DF cortical profile - illustrative
+seed: 1234
+defaults:
+  df_percent: {mean: 0, sigma: 0}
+  soma_size_df_percent: {mean: 0, sigma: 0}
+layers:
+  granular_layer:
+    thickness_df_percent: {mean: 10, sigma: 0}
+    density_df_percent: {mean: 10, sigma: 0}
+  purkinje_layer:
+    thickness_df_percent: {mean: 0, sigma: 0}
+    density_df_percent: {mean: 0, sigma: 0}
+  b_molecular_layer:
+    thickness_df_percent: {mean: 5, sigma: 0}
+    density_df_percent: {mean: 0, sigma: 0}
+  t_molecular_layer:
+    thickness_df_percent: {mean: 5, sigma: 0}
+    density_df_percent: {mean: 0, sigma: 0}
+populations:
+  golgi_cell:
+    cells:
+      df_percent: {mean: 20, sigma: 10}
+      soma_size_df_percent: {mean: 0, sigma: 0}
+  purkinje_cell:
+    cells:
+      df_percent: {mean: 15, sigma: 15}
+      soma_size_df_percent: {mean: 0, sigma: 0}
+      rotation_x_deg: {mean: 0, sigma: 10}
+      rotation_y_deg: {mean: 0, sigma: 10}
+      rotation_z_deg: {mean: 0, sigma: 10}
+  granule_cell:
+    density_df_percent: {mean: 15, sigma: 0}
+    cells:
+      df_percent: {mean: 30, sigma: 5}
+      soma_size_df_percent: {mean: 0, sigma: 0}
+  basket_cell:
+    cells:
+      df_percent: {mean: 5, sigma: 10}
+      soma_size_df_percent: {mean: 0, sigma: 0}
+  stellate_cell:
+    cells:
+      df_percent: {mean: 5, sigma: 10}
+      soma_size_df_percent: {mean: 0, sigma: 0}
+individuals: []

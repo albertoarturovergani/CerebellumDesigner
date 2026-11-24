@@ -1,0 +1,15 @@
+{
+  "versions": {
+    "bsb-core": "8.0.2",
+    "bsb-hdf5": "8.0.2",
+    "bsb-json": "8.0.2",
+    "bsb-yaml": "8.0.2",
+    "cerebellar-models": "0.13.0",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "h5py": "3.16.0",
+    "mpi4py": "4.1.2"
+  },
+  "model_commit": "e77be2d0e9ea907a7672c7ab10a9279050fcd024",
+  "backend": "BSB 8 on Linux with MPI8"
+}

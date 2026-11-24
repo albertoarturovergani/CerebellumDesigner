@@ -1,0 +1,15 @@
+Cerebellum Designer — native Windows editor
+Maintainer: Alberto Arturo Vergani
+
+The scientific transformation source is included in _internal/DeformationAlgorithm.
+The pinned upstream cerebellar-models source and its original LICENSE are in
+_internal/resources/src/cerebellar-models. Original model authors and references
+remain in those files. The SWCs retain their upstream provenance.
+
+This distribution bundles Python, NumPy, SciPy, h5py, PyYAML, ReportLab, Pillow,
+Chardet and their runtime dependencies, packaged using PyInstaller.
+Their original licenses are included under _internal/third_party_licenses.
+Third-party dependencies retain their respective license terms.
+Three.js retains its MIT license header in the local vendor JavaScript file.
+DejaVu fonts and their license are in _internal/resources/fonts.
+No BSB/MPI/NEST/NEURON execution engine is bundled in the native editor.

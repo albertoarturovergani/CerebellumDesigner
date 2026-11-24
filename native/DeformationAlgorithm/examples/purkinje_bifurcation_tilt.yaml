@@ -1,0 +1,26 @@
+schema: cereb-df/v2
+name: Purkinje bifurcation tilt -10deg demonstration
+seed: 1234
+defaults: {}
+layers: {}
+populations:
+  purkinje_cell:
+    cells:
+      bifurcation_tilt_deg: {mean: -10, sigma: 0}
+individuals: []
+annotations:
+  notes: >-
+    Canonical morphology with only dendritic bifurcation tilt changed.
+    Demonstration, not the SZ preset. Lengths, radii, soma and axon,
+    topology, densities, layers and electrical parameters remain canonical.
+  parameter_notes:
+    populations.purkinje_cell.cells.bifurcation_tilt_deg.mean: >-
+      Mavroudis et al. (2017), Fig. 1D, reports altered local and remote
+      bifurcation tilt in human Purkinje cells. The -10 degree demonstration
+      is exploratory, not a measured or fitted SZ effect. Operational measure:
+      minimum parent-facing angle; local uses nearest noncoincident samples,
+      remote uses branch endpoints. Each daughter's local angle changes by
+      the requested degrees, clipped to [1, 179]. Subtree rotations preserve
+      lengths and topology but can change bifurcation opening angles and
+      spatial extent. No collision avoidance or layer clipping.
+      https://rjme.ro/RJME/resources/files/580217419424.pdf

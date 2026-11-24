@@ -3,3 +3,8 @@
 *.cmd text eol=crlf
 *.zip binary
 *.tar.gz binary
+*.py text eol=lf
+*.js text eol=lf
+*.html text eol=lf
+*.css text eol=lf
+*.ttf binary

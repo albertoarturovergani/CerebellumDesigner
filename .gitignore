@@ -4,3 +4,8 @@ __pycache__/
 szpaper2/
 *.hdf5
 *.h5
+native/resources/src/
+native/build/
+native/dist/
+native/test-output/
+native/*.spec

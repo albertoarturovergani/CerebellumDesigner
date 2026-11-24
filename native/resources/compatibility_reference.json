@@ -1,0 +1,272 @@
+{
+  "healthy/granule_cell": {
+    "metrics": {
+      "length_um": 2196.9999522754997,
+      "tips": 6,
+      "branch_points": 1
+    },
+    "dci": {
+      "dci": 59.999957997546346,
+      "length_um": 59.999957997546346,
+      "primary_dendrites": 4,
+      "tips": 4,
+      "tip_order_sum": 0,
+      "source": "https://doi.org/10.1038/s42003-023-05689-y",
+      "unit": "\u00b5m",
+      "order_convention": "Number of dendritic branch points from soma to tip; primary stem order 0."
+    },
+    "nodes_shape": [
+      131,
+      4
+    ],
+    "coordinate_sum": [
+      8.762,
+      0.0,
+      15377.105197021485,
+      21.800000548362725
+    ]
+  },
+  "healthy/golgi_cell": {
+    "metrics": {
+      "length_um": 5089.7936321227735,
+      "tips": 119,
+      "branch_points": 107
+    },
+    "dci": {
+      "dci": 147274.19344596576,
+      "length_um": 3279.3848743028816,
+      "primary_dendrites": 11,
+      "tips": 81,
+      "tip_order_sum": 413,
+      "source": "https://doi.org/10.1038/s42003-023-05689-y",
+      "unit": "\u00b5m",
+      "order_convention": "Number of dendritic branch points from soma to tip; primary stem order 0."
+    },
+    "nodes_shape": [
+      5087,
+      4
+    ],
+    "coordinate_sum": [
+      72633.73441364989,
+      -59418.65015457943,
+      82363.35454908013,
+      1547.7926353514194
+    ]
+  },
+  "healthy/purkinje_cell": {
+    "metrics": {
+      "length_um": 4888.609098634789,
+      "tips": 230,
+      "branch_points": 228
+    },
+    "dci": {
+      "dci": 12809876.158574982,
+      "length_um": 4455.609098634776,
+      "primary_dendrites": 1,
+      "tips": 229,
+      "tip_order_sum": 2646,
+      "source": "https://doi.org/10.1038/s42003-023-05689-y",
+      "unit": "\u00b5m",
+      "order_convention": "Number of dendritic branch points from soma to tip; primary stem order 0."
+    },
+    "nodes_shape": [
+      3376,
+      4
+    ],
+    "coordinate_sum": [
+      64664.962158203125,
+      7632.5,
+      360825.40254211426,
+      1657.1503453731539
+    ]
+  },
+  "healthy/basket_cell": {
+    "metrics": {
+      "length_um": 2531.7038501439542,
+      "tips": 61,
+      "branch_points": 52
+    },
+    "dci": {
+      "dci": 19126.79734604421,
+      "length_um": 1220.8594050666518,
+      "primary_dendrites": 6,
+      "tips": 24,
+      "tip_order_sum": 70,
+      "source": "https://doi.org/10.1038/s42003-023-05689-y",
+      "unit": "\u00b5m",
+      "order_convention": "Number of dendritic branch points from soma to tip; primary stem order 0."
+    },
+    "nodes_shape": [
+      6344,
+      4
+    ],
+    "coordinate_sum": [
+      -214703.34173583984,
+      -30334.74127535522,
+      153643.43540382385,
+      1726.3428839743137
+    ]
+  },
+  "healthy/stellate_cell": {
+    "metrics": {
+      "length_um": 1403.8268048775897,
+      "tips": 62,
+      "branch_points": 57
+    },
+    "dci": {
+      "dci": 97821.17773216704,
+      "length_um": 1178.568406411651,
+      "primary_dendrites": 4,
+      "tips": 54,
+      "tip_order_sum": 278,
+      "source": "https://doi.org/10.1038/s42003-023-05689-y",
+      "unit": "\u00b5m",
+      "order_convention": "Number of dendritic branch points from soma to tip; primary stem order 0."
+    },
+    "nodes_shape": [
+      3233,
+      4
+    ],
+    "coordinate_sum": [
+      -14011.823711395264,
+      -8140.828945159912,
+      -965.1838436126709,
+      846.2144553437829
+    ]
+  },
+  "sz/granule_cell": {
+    "metrics": {
+      "length_um": 2196.9999522754997,
+      "tips": 6,
+      "branch_points": 1
+    },
+    "dci": {
+      "dci": 59.999957997546346,
+      "length_um": 59.999957997546346,
+      "primary_dendrites": 4,
+      "tips": 4,
+      "tip_order_sum": 0,
+      "source": "https://doi.org/10.1038/s42003-023-05689-y",
+      "unit": "\u00b5m",
+      "order_convention": "Number of dendritic branch points from soma to tip; primary stem order 0."
+    },
+    "nodes_shape": [
+      131,
+      4
+    ],
+    "coordinate_sum": [
+      8.762,
+      0.0,
+      15377.105197021485,
+      21.800000548362725
+    ]
+  },
+  "sz/golgi_cell": {
+    "metrics": {
+      "length_um": 5089.7936321227735,
+      "tips": 119,
+      "branch_points": 107
+    },
+    "dci": {
+      "dci": 147274.19344596576,
+      "length_um": 3279.3848743028816,
+      "primary_dendrites": 11,
+      "tips": 81,
+      "tip_order_sum": 413,
+      "source": "https://doi.org/10.1038/s42003-023-05689-y",
+      "unit": "\u00b5m",
+      "order_convention": "Number of dendritic branch points from soma to tip; primary stem order 0."
+    },
+    "nodes_shape": [
+      5087,
+      4
+    ],
+    "coordinate_sum": [
+      72633.73441364989,
+      -59418.65015457943,
+      82363.35454908013,
+      1547.7926353514194
+    ]
+  },
+  "sz/purkinje_cell": {
+    "metrics": {
+      "length_um": 4155.317733839557,
+      "tips": 230,
+      "branch_points": 228
+    },
+    "dci": {
+      "dci": 10888394.734788733,
+      "length_um": 3787.2677338395592,
+      "primary_dendrites": 1,
+      "tips": 229,
+      "tip_order_sum": 2646,
+      "source": "https://doi.org/10.1038/s42003-023-05689-y",
+      "unit": "\u00b5m",
+      "order_convention": "Number of dendritic branch points from soma to tip; primary stem order 0."
+    },
+    "nodes_shape": [
+      3376,
+      4
+    ],
+    "coordinate_sum": [
+      47789.70161781236,
+      6487.624999999991,
+      307153.03946317476,
+      1650.3728769709708
+    ]
+  },
+  "sz/basket_cell": {
+    "metrics": {
+      "length_um": 2531.7038501439542,
+      "tips": 61,
+      "branch_points": 52
+    },
+    "dci": {
+      "dci": 19126.79734604421,
+      "length_um": 1220.8594050666518,
+      "primary_dendrites": 6,
+      "tips": 24,
+      "tip_order_sum": 70,
+      "source": "https://doi.org/10.1038/s42003-023-05689-y",
+      "unit": "\u00b5m",
+      "order_convention": "Number of dendritic branch points from soma to tip; primary stem order 0."
+    },
+    "nodes_shape": [
+      6344,
+      4
+    ],
+    "coordinate_sum": [
+      -214703.34173583984,
+      -30334.74127535522,
+      153643.43540382385,
+      1726.3428839743137
+    ]
+  },
+  "sz/stellate_cell": {
+    "metrics": {
+      "length_um": 1403.8268048775897,
+      "tips": 62,
+      "branch_points": 57
+    },
+    "dci": {
+      "dci": 97821.17773216704,
+      "length_um": 1178.568406411651,
+      "primary_dendrites": 4,
+      "tips": 54,
+      "tip_order_sum": 278,
+      "source": "https://doi.org/10.1038/s42003-023-05689-y",
+      "unit": "\u00b5m",
+      "order_convention": "Number of dendritic branch points from soma to tip; primary stem order 0."
+    },
+    "nodes_shape": [
+      3233,
+      4
+    ],
+    "coordinate_sum": [
+      -14011.823711395264,
+      -8140.828945159912,
+      -965.1838436126709,
+      846.2144553437829
+    ]
+  }
+}
